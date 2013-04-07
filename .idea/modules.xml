@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/commonDao/commonDao.iml" filepath="$PROJECT_DIR$/commonDao/commonDao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaUT/javaUT.iml" filepath="$PROJECT_DIR$/javaUT/javaUT.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myHttpClient/myHttpClient.iml" filepath="$PROJECT_DIR$/myHttpClient/myHttpClient.iml" />
+    </modules>
+  </component>
+</project>
+
