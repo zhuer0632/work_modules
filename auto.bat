@@ -1,5 +1,5 @@
 git add .
-git commit -m 'msg'
+git commit -m 'autoCommit'
 git push origin master
 
  

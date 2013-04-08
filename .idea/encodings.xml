@@ -3,7 +3,6 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$/commonDao" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/javaUT" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/myHttpClient" charset="UTF-8" />
   </component>
 </project>
 
