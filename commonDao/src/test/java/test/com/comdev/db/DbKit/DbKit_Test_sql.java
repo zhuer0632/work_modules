@@ -4,7 +4,10 @@ package test.com.comdev.db.DbKit;
 import com.comdev.db.DbKit;
 import org.apache.log4j.Logger;
 import org.junit.Test;
+import org.nutz.dao.Cnd;
 import org.nutz.dao.pager.Pager;
+import org.nutz.dao.util.cri.SqlExpression;
+import org.nutz.dao.util.cri.SqlExpressionGroup;
 import org.nutz.lang.Dumps;
 
 import java.util.List;
@@ -24,8 +27,18 @@ public class DbKit_Test_sql
     public void test01() throws Exception
     {
 
+        SqlExpressionGroup g1 = null;
+
+        SqlExpressionGroup g2 = null;
+
+        SqlExpressionGroup g3 = null;
+
+
+        g1.and(g2).or(g3);
+
         int i = DbKit.getCount("select * from beaPath");
         logger.debug(i);
+
 
     }
 
@@ -42,6 +55,8 @@ public class DbKit_Test_sql
         List<String> list = DbKit.getStringList(sql, pager);
 
         Dumps.obj(list);
+
+
 
 
     }

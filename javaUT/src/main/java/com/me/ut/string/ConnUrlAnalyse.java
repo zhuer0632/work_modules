@@ -6,7 +6,7 @@ package com.me.ut.string;
  * Time: 下午8:25
  */
 
-import org.nutz.dao.DB;
+
 
 /**
  * 对jdbc驱动的解析

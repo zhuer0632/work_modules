@@ -31,9 +31,9 @@ public class DbKit
     private static  final Logger logger = Logger.getLogger(DbKit.class);
     private static NutDao dao;
 
-
     static
     {
+
         //初始化dao的配置文件
         dao = new NutDao();
 
