@@ -70,13 +70,15 @@ public class StringUT
         return UUID.randomUUID().toString().replace("-",
                 "");
     }
+
     /**
      * 根据指定的表达式，返回其中的最后一个捕获组
-     *<br/>
+     * <br/>
      * 举例：
      * <br/>
-     *  jdbc:mysql://127.0.0.1:3306/db_xj_valuation?charachterEncoding=UTF-8;
-     *  截取其中的IP，需要的正则就是jdbc:mysql://(.{7,}):\d{4}.+
+     * jdbc:mysql://127.0.0.1:3306/db_xj_valuation?charachterEncoding=UTF-8;
+     * 截取其中的IP，需要的正则就是jdbc:mysql://(.{7,}):\d{4}.+
+     *
      * @param src
      * @param rex
      * @return
@@ -95,4 +97,35 @@ public class StringUT
         return s;
     }
 
+    /**
+     * 拼接List
+     *
+     * @param errs
+     * @param s
+     * @return
+     */
+    public static String toString(List<String> errs, String s)
+    {
+
+        StringBuilder stringBuilder = new StringBuilder();
+
+        if (isEmpty(errs))
+        {
+            return "";
+        }
+
+        for (int i = 0; i < errs.size(); i++)
+        {
+
+            if (i == errs.size() - 1)
+            {
+                stringBuilder.append(errs.get(i));
+            } else
+            {
+                stringBuilder.append(errs.get(i) + s);
+            }
+        }
+        return stringBuilder.toString();
+
+    }
 }

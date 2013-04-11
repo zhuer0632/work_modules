@@ -4,11 +4,9 @@ import com.comdev.constvo.CharsetEnum;
 import com.me.http.ut.HttpUT;
 import com.me.http.ut.TextHttpResponse;
 import com.me.ut.file.FileUT;
-import com.sun.deploy.net.HttpUtils;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 
-import java.nio.charset.Charset;
 
 /**
  * User: zhu

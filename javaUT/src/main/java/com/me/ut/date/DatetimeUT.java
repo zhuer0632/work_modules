@@ -1,6 +1,8 @@
 package com.me.ut.date;
 
 
+import java.text.ParsePosition;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.apache.commons.beanutils.ConvertUtils;
@@ -136,5 +138,24 @@ public class DatetimeUT
     public static String getNow_long()
     {
         return String.valueOf(new Date().getTime());
+    }
+
+    /**
+     *
+     *  字符串转java.util.Date ,字符串格式必须是 yyyy-MM-dd HH:mm:ss
+     *
+     * @param dateStr
+     * @return
+     */
+    public static Date getDate(String dateStr)
+    {
+        if (null == dateStr || dateStr.length() <= 0)
+        {
+            return null;
+        }
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date d = formatter.parse(dateStr,
+                new ParsePosition(0));
+        return d;
     }
 }

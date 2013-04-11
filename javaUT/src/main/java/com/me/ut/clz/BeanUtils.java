@@ -1,18 +1,44 @@
 package com.me.ut.clz;
 
+import com.me.vo.VOPerson;
 import org.apache.commons.beanutils.BeanUtilsBean;
 
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+import javax.validation.Validator;
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Array;
 import java.lang.reflect.InvocationTargetException;
 import java.sql.Timestamp;
-import java.util.Collection;
-import java.util.Date;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
 
 public class BeanUtils
 {
+
+    /**
+     *
+     * 指定类型，校验数据
+     * @param <T>
+     * @param vo
+     * @return
+     */
+    public static <T> List<String> getErrFromValidator(Object vo)
+    {
+        List<String> errs = new LinkedList<String>();
+
+        Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
+        Set<ConstraintViolation<T>> result = validator.validate((T)vo);
+        Iterator<ConstraintViolation<T>> it = result.iterator();
+        while (it.hasNext())
+        {
+            ConstraintViolation<T> item = it.next();
+            errs.add(item.getMessage());
+        }
+        return errs;
+    }
+
+
     /**
      * 对一个bean进行深度复制，所有的属性节点全部会被复制
      *
