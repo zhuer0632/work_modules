@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://D:/work_modules/commonDao/commonDao.iml" filepath="D:/work_modules/commonDao/commonDao.iml" />
+      <module fileurl="file://D:/work_modules/javaUT/javaUT.iml" filepath="D:/work_modules/javaUT/javaUT.iml" />
+      <module fileurl="file://D:/work_modules/springmvc/springmvc.iml" filepath="D:/work_modules/springmvc/springmvc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/work_purehttp.iml" filepath="$PROJECT_DIR$/work_purehttp.iml" />
+    </modules>
+  </component>
+</project>
+

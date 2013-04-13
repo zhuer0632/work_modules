@@ -3,6 +3,9 @@
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/springmvc" />
+  </component>
   <component name="IdProvider" IDEtalkID="71ACEA1FD72D9226B98C106FE4D3DEFF" />
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -11,6 +14,11 @@
         <option value="$PROJECT_DIR$/javaUT/pom.xml" />
         <option value="$PROJECT_DIR$/myHttpClient/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/springmvc/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" />

@@ -1,89 +1,65 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>springmvc</groupId>
     <artifactId>springmvc</artifactId>
+    <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
-
-    <name>springmvc</name>
+    <name>springmvc Maven Webapp</name>
     <url>http://maven.apache.org</url>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
 
     <dependencies>
-        <!--Servlet API-->
+        <!--dao-javaut-->
         <dependency>
-            <groupId>servletapi</groupId>
-            <artifactId>servletapi</artifactId>
-            <version>2.4</version>
-            <scope>provided</scope>
+            <groupId>commonDao</groupId>
+            <artifactId>commonDao</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
 
-        <!--Freemarker-->
+        <!---web支持-->
         <dependency>
-            <groupId>org.freemarker</groupId>
-            <artifactId>freemarker</artifactId>
-            <version>2.3.19</version>
+            <groupId>springmvcmaven</groupId>
+            <artifactId>springmvcmaven</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-            <version>3.2.2.RELEASE</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-            <version>3.2.2.RELEASE</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context-support</artifactId>
-            <version>3.2.2.RELEASE</version>
-        </dependency>
-
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-jdbc</artifactId>
-            <version>3.2.2.RELEASE</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-aop</artifactId>
-            <version>3.2.2.RELEASE</version>
-        </dependency>
-
-
-        <!--Json-->
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-mapper-asl</artifactId>
-            <version>1.9.12</version>
-        </dependency>
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-core-asl</artifactId>
-            <version>1.9.12</version>
-        </dependency>
-
-
-
-        <!--Servlet-->
-        <dependency>
-            <groupId>org.apache.geronimo.specs</groupId>
-            <artifactId>geronimo-servlet_3.0_spec</artifactId>
-            <version>1.0</version>
-        </dependency>
-
-
 
     </dependencies>
+    <build>
+        <finalName>webapp1</finalName>
+        <plugins>
+
+            <!--jetty插件-->
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>maven-jetty-plugin</artifactId>
+                <version>6.1.10</version>
+                <configuration>
+                    <connectors>
+                        <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+                            <port>8080</port>
+                        </connector>
+                    </connectors>
+                    <scanIntervalSeconds>10</scanIntervalSeconds>
+                    <stopKey>foo</stopKey>
+                    <stopPort>9999</stopPort>
+                    <contextPath>/</contextPath>
+                </configuration>
+            </plugin>
+
+            <!--tomcat插件-->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>tomcat-maven-plugin</artifactId>
+                <version>1.1</version>
+            </plugin>
+        </plugins>
+
+        <testOutputDirectory>
+            ${basedir}/target/classes
+        </testOutputDirectory>
+
+    </build>
+
+
 </project>
