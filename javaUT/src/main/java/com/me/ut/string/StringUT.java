@@ -1,6 +1,7 @@
 package com.me.ut.string;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.log4j.Logger;
 
 import java.lang.reflect.Array;
 import java.util.*;
@@ -10,6 +11,7 @@ import java.util.regex.Pattern;
 public class StringUT
 {
 
+    private  static  final Logger logger=Logger.getLogger(StringUT.class);
     public static List<String> split(String in)
     {
 
@@ -127,5 +129,28 @@ public class StringUT
         }
         return stringBuilder.toString();
 
+    }
+
+    /**
+     * 通过regx查找srcStr中匹配的字符串，然后替换成targetStr
+     *
+     * <br/>
+     * 比如为了替换"jdbc:mysql://127.0.0.1:3306/cms?charachterEncoding=UTF-8;" 中的cms为abc
+     *regx参数就应该为   .*:\d{4}/(.*)\?.*
+     *
+     * jdbc:jtds:sqlserver://127.0.0.1:1433;databaseName=bea;SelectMethod=cursor
+     *
+     *
+     * @param srcStr
+     * @param regx
+     * @param targetStr
+     * @return
+     */
+    public static String replace(String srcStr, String regx, String targetStr)
+    {
+        String s=StringUT.cut(srcStr,regx);
+        srcStr=srcStr.replaceAll(s,targetStr);
+        logger.debug("替换后"+srcStr);
+        return srcStr;
     }
 }

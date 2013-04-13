@@ -12,17 +12,35 @@ import java.util.List;
 public interface IDbMeta
 {
 
+
+    /**
+     * 创建数据库
+     *
+     * @return 1:成功，2：失败：3：数据库已经存在，没有操作，直接返回
+     */
+    public int createDb(String dbname);
+
     /**
      * 取得当前数据库下的所有数据库的名字
+     *
      * @return
      */
-    public  List<String>  getdbNames();
+    public List<String> getdbNames();
 
     /**
      * 测试配置文件是否正常
+     *
      * @return
      */
     public boolean checkDbConfig();
+
+    /**
+     * 检查数据库是否存在-实现方法就是根据dbName放在配置文件中
+     * 初始化一下配置文件，没有异常就是存在
+     * @param dbName
+     * @return
+     */
+    public boolean checkHasDB(String dbName);
 
 
     /**

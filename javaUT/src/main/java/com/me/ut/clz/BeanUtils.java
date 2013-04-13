@@ -23,12 +23,12 @@ public class BeanUtils
      * @param vo
      * @return
      */
-    public static <T> List<String> getErrFromValidator(Object vo)
+    public static <T> List<String> getErrFromValidator(T vo)
     {
         List<String> errs = new LinkedList<String>();
 
         Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
-        Set<ConstraintViolation<T>> result = validator.validate((T)vo);
+        Set<ConstraintViolation<T>> result = validator.validate(vo);
         Iterator<ConstraintViolation<T>> it = result.iterator();
         while (it.hasNext())
         {

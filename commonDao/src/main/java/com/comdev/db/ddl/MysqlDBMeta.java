@@ -1,8 +1,9 @@
 package com.comdev.db.ddl;
 
-import com.comdev.db.DbKit;
 import com.comdev.db.dbinfovo.ColumnInfo;
+import com.comdev.exceptions.noImplException;
 import com.comdev.ut.PropertiesUT;
+import com.me.ut.string.StringUT;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -16,6 +17,12 @@ import java.util.List;
  */
 public class MysqlDBMeta implements IDbMeta
 {
+    @Override
+    public int createDb(String dbname)
+    {
+           throw new noImplException();
+    }
+
     @Override
     public List<String> getdbNames()
     {
@@ -35,6 +42,44 @@ public class MysqlDBMeta implements IDbMeta
         try
         {
             Class.forName(driverclass);
+            con = DriverManager.getConnection(url, username, password);
+        } catch (Exception e)
+        {
+            return false;
+        } finally
+        {
+            if (con != null)
+            {
+                try
+                {
+                    if (con.isClosed())
+                    {
+                        con.close();
+                    }
+                } catch (SQLException e)
+                {
+
+                }
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public boolean checkHasDB(String dbName)
+    {
+
+        String url = PropertiesUT.get_url();
+        String username = PropertiesUT.get_username();
+        String password = PropertiesUT.get_password();
+        String driverclass = PropertiesUT.get_driverclass();
+
+        Connection con = null;
+        try
+        {
+            //jdbc:mysql://127.0.0.1:3306/cms?charachterEncoding=UTF-8;
+            Class.forName(driverclass);
+            url= StringUT.replace(url,".*:\\d{4}/(.*)\\?.*",dbName);
             con = DriverManager.getConnection(url, username, password);
         } catch (Exception e)
         {

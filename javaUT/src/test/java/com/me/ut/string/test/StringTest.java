@@ -33,11 +33,27 @@ public class StringTest
     {
         String s = "javascript:delete_tweet(1830039)";
 
-        String out=StringUT.cut(s,"javascript:delete_tweet\\((\\d*)\\)");
+        String out = StringUT.cut(s, "javascript:delete_tweet\\((\\d*)\\)");
 
         logger.debug(out);
 
     }
 
+    @Test
+    /**
+     *  字符串替换
+     */
+    public void test03()
+    {
+        //.+:\\d{4}/(.)?*
+        //
+        //jdbc:mysql://127.0.0.1:3306/cms?charachterEncoding=UTF-8;
+        // jdbc:jtds:sqlserver://127.0.0.1:1433;databaseName=bea;SelectMethod=cursor
+        String url = "jdbc:jtds:sqlserver://127.0.0.1:1433;databaseName=bea;SelectMethod=cursor";
+        url = StringUT.replace(url, ".*:\\d{4};databaseName=(.*);.*", "haha");
 
+        //url=url.replaceAll("cms","xxx");
+        logger.debug(url);
+
+    }
 }
