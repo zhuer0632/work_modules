@@ -33,7 +33,6 @@ public class Run
                 " )\n" +
                 ")";
 
-
         List<Map> list = DbKit.getMapList(sql);
 
         Map<String, String> fields = new HashMap<String, String>();

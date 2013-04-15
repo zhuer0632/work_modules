@@ -11,7 +11,8 @@ import java.util.regex.Pattern;
 public class StringUT
 {
 
-    private  static  final Logger logger=Logger.getLogger(StringUT.class);
+    private static final Logger logger = Logger.getLogger(StringUT.class);
+
     public static List<String> split(String in)
     {
 
@@ -133,13 +134,12 @@ public class StringUT
 
     /**
      * 通过regx查找srcStr中匹配的字符串，然后替换成targetStr
-     *
+     * <p/>
      * <br/>
      * 比如为了替换"jdbc:mysql://127.0.0.1:3306/cms?charachterEncoding=UTF-8;" 中的cms为abc
-     *regx参数就应该为   .*:\d{4}/(.*)\?.*
-     *
+     * regx参数就应该为   .*:\d{4}/(.*)\?.*
+     * <p/>
      * jdbc:jtds:sqlserver://127.0.0.1:1433;databaseName=bea;SelectMethod=cursor
-     *
      *
      * @param srcStr
      * @param regx
@@ -148,9 +148,45 @@ public class StringUT
      */
     public static String replace(String srcStr, String regx, String targetStr)
     {
-        String s=StringUT.cut(srcStr,regx);
-        srcStr=srcStr.replaceAll(s,targetStr);
-        logger.debug("替换后"+srcStr);
+        String s = StringUT.cut(srcStr, regx);
+        srcStr = srcStr.replaceAll(s, targetStr);
+        logger.debug("替换后" + srcStr);
         return srcStr;
+    }
+
+    /**
+     * 取得项目的根目录
+     */
+    public static String root()
+    {
+        return StringUT.class.getResource("/").getPath();
+    }
+
+    /**
+     * 把字符串list转换成sql函数in需要的字符串。不包含最外面的括号
+     *
+     * @param list
+     * @return
+     */
+    public static String getInStr(List<String> list)
+    {
+        if (isEmpty(list))
+        {
+            return "";
+        }
+
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < list.size(); i++)
+        {
+            String s = list.get(i);
+            if (i == list.size() - 1)
+            {
+                stringBuilder.append("\'" + s + "\'");
+            } else
+            {
+                stringBuilder.append("\'" + s + "\',");
+            }
+        }
+        return stringBuilder.toString();
     }
 }

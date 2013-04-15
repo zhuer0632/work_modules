@@ -56,4 +56,11 @@ public class StringTest
         logger.debug(url);
 
     }
+
+    @Test
+    public void test04()
+    {
+        String rootpath = StringUT.root();
+        System.out.println(rootpath);
+    }
 }

@@ -15,6 +15,21 @@
     </properties>
 
     <dependencies>
+
+        <!--测试-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+        </dependency>
+
+        <!--日志管理-->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+        
         <!--Servlet API-->
         <dependency>
             <groupId>servletapi</groupId>
@@ -62,7 +77,7 @@
         </dependency>
 
 
-        <!--Json-->
+        <!--内置的json-->
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-mapper-asl</artifactId>
@@ -74,6 +89,12 @@
             <version>1.9.12</version>
         </dependency>
 
+        <!--习惯用的json-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.1.27</version>
+        </dependency>
 
 
         <!--Servlet-->
@@ -82,7 +103,7 @@
             <artifactId>geronimo-servlet_3.0_spec</artifactId>
             <version>1.0</version>
         </dependency>
-
+        
 
 
     </dependencies>
