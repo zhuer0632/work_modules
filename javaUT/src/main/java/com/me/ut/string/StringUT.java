@@ -153,4 +153,12 @@ public class StringUT
         logger.debug("替换后"+srcStr);
         return srcStr;
     }
+
+    /**
+     * 取得项目的根目录
+     */
+    public static String root()
+    {
+      return  StringUT.class.getResource("/").getPath();
+    }
 }

@@ -97,6 +97,9 @@
             <version>5.0.0.CR4</version>
         </dependency>
 
+
+
+
     </dependencies>
     <build>
         <plugins>
@@ -110,5 +113,9 @@
                 </configuration>
             </plugin>
         </plugins>
+
+        <testOutputDirectory>
+                ${basedir}/target/classes
+        </testOutputDirectory>
     </build>
 </project>

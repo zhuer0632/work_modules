@@ -1,6 +1,7 @@
 package test.com.comdev.db.ddl;
 
 import com.comdev.db.ddl.MysqlDBMeta;
+import com.comdev.db.ddl.SqlServerDBMeta;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 
@@ -19,6 +20,12 @@ public class Test01
         MysqlDBMeta db = new MysqlDBMeta();
         boolean flag = db.checkDbConfig();
         logger.debug(flag);
+    }
+
+    @Test
+    public  void test02()
+    {
+
     }
 
 
