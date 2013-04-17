@@ -5,9 +5,8 @@ import com.comdev.exceptions.noImplException;
 import com.comdev.ut.PropertiesUT;
 import com.me.ut.string.StringUT;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -26,8 +25,83 @@ public class MysqlDBMeta implements IDbMeta
     @Override
     public List<String> getdbNames()
     {
-        return null;
+        List<String> out = new ArrayList<String>();
+        Connection conn = null;       //定义变量
+        PreparedStatement pstet = null;
+        ResultSet rs = null;
+        try
+        {
+
+            Class.forName(PropertiesUT.get_driverclass());    //装在去动程序
+
+            conn = DriverManager.getConnection(PropertiesUT.get_url(), PropertiesUT.get_username(), PropertiesUT.get_password());   //加载驱动并与数据库连接
+
+            String sql = "show databases";   //sql  语句
+
+            pstet = conn.prepareStatement(sql);   //发送sql语句并得到结果集
+
+            rs = pstet.executeQuery();
+
+            while (rs.next())
+            {  // 判断数据集中是否有数据
+                out.add(rs.getString(1));
+            }
+
+        } catch (Exception e)
+        {
+            e.printStackTrace();
+        } finally
+        {
+            clossConnection(conn);
+            clossResultSet(rs);
+            clossStatement(pstet);
+        }
+        return out;
     }
+
+    private void clossConnection(Connection conn)
+    {
+        try
+        {
+            if (conn != null && !conn.isClosed())
+            {
+                conn.close();
+            }
+        } catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    private void clossStatement(PreparedStatement pstet)
+    {
+        try
+        {
+            if (pstet != null)
+            {
+                pstet.close();
+            }
+        } catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+    }
+
+    private void clossResultSet(ResultSet rs)
+    {
+        try
+        {
+            if (rs != null)
+            {
+                rs.close();
+            }
+        } catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+
 
     @Override
     public boolean checkDbConfig()

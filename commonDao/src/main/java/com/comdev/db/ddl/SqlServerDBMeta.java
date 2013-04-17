@@ -25,6 +25,7 @@ public class SqlServerDBMeta implements IDbMeta
      */
     public int createDb(String dbname)
     {
+
         if (!checkDbConfig())
         {
             throw new RuntimeException("数据库配置错误");

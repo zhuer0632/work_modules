@@ -104,3 +104,21 @@
 2013-04-14 11:09:00 [com.me.ut.string.test.StringTest]-[DEBUG] 1830039
 2013-04-14 11:09:00 [com.me.ut.string.StringUT]-[DEBUG] Ìæ»»ºójdbc:jtds:sqlserver://127.0.0.1:1433;databaseName=haha;SelectMethod=cursor
 2013-04-14 11:09:00 [com.me.ut.string.test.StringTest]-[DEBUG] jdbc:jtds:sqlserver://127.0.0.1:1433;databaseName=haha;SelectMethod=cursor
+<<<<<<< HEAD
+=======
+2013-04-15 08:39:55 [com.me.ut.string.test.ConnTest]-[DEBUG] 127.0.0.1
+2013-04-15 08:39:55 [com.me.ut.string.test.ConnTest]-[DEBUG] 3306
+2013-04-15 08:39:55 [com.me.ut.string.test.ConnTest]-[DEBUG] cms?charachterEncoding=UTF-8;
+2013-04-15 08:39:55 [com.me.ut.string.test.StringTest]-[DEBUG] 127.0.0.1
+2013-04-15 08:39:55 [com.me.ut.string.test.StringTest]-[DEBUG] 1830039
+2013-04-15 08:39:55 [com.me.ut.string.StringUT]-[DEBUG] Ìæ»»ºójdbc:jtds:sqlserver://127.0.0.1:1433;databaseName=haha;SelectMethod=cursor
+2013-04-15 08:39:55 [com.me.ut.string.test.StringTest]-[DEBUG] jdbc:jtds:sqlserver://127.0.0.1:1433;databaseName=haha;SelectMethod=cursor
+2013-04-16 10:29:24 [com.me.ut.crpt.md5.Test01]-[DEBUG] 21232f297a57a5a743894a0e4a801fc3
+2013-04-16 10:29:24 [com.me.ut.string.test.ConnTest]-[DEBUG] 127.0.0.1
+2013-04-16 10:29:24 [com.me.ut.string.test.ConnTest]-[DEBUG] 3306
+2013-04-16 10:29:24 [com.me.ut.string.test.ConnTest]-[DEBUG] cms?charachterEncoding=UTF-8;
+2013-04-16 10:29:24 [com.me.ut.string.test.StringTest]-[DEBUG] 127.0.0.1
+2013-04-16 10:29:24 [com.me.ut.string.test.StringTest]-[DEBUG] 1830039
+2013-04-16 10:29:24 [com.me.ut.string.StringUT]-[DEBUG] Ìæ»»ºójdbc:jtds:sqlserver://127.0.0.1:1433;databaseName=haha;SelectMethod=cursor
+2013-04-16 10:29:24 [com.me.ut.string.test.StringTest]-[DEBUG] jdbc:jtds:sqlserver://127.0.0.1:1433;databaseName=haha;SelectMethod=cursor
+>>>>>>> c954ad3a02513463848dcd0ffb1f408412a3bf7c

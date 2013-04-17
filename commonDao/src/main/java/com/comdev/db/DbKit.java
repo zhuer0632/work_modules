@@ -11,6 +11,8 @@ import org.nutz.dao.entity.Entity;
 import org.nutz.dao.impl.NutDao;
 import org.nutz.dao.pager.Pager;
 import org.nutz.dao.sql.Sql;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -28,7 +30,7 @@ import java.util.Map;
  */
 public class DbKit
 {
-    private static  final Logger logger = Logger.getLogger(DbKit.class);
+    private static final Logger logger = Logger.getLogger(DbKit.class);
     private static NutDao dao;
 
     static
@@ -45,6 +47,21 @@ public class DbKit
         druid.setMaxActive(PropertiesUT.get_minconn());// 最少保留多少链接
         druid.setInitialSize(2);// 没有连接的时候一次创建多少
         dao.setDataSource(druid);
+
+        //下面是从spring容器中获取dao
+//        dao = getBean(NutDao.class);
+
+    }
+
+
+    /**
+     * 取得某个Control的实例
+     */
+    public static <T> T getBean(Class<T> clz)
+    {
+        ApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"beans.xml"});
+        T t = context.getBean(clz);
+        return t;
     }
 
 
@@ -339,14 +356,16 @@ public class DbKit
 
     /**
      * 执行特殊的本地sql [尽量少用]
+     *
      * @param sql
      */
     public static void executeNaviteSQL(String sql)
     {
 
         Connection conn = null;       //定义变量
-        PreparedStatement pstet =null;
-        try {
+        PreparedStatement pstet = null;
+        try
+        {
 
             Class.forName(PropertiesUT.get_driverclass());    //装在去动程序
 
@@ -354,52 +373,65 @@ public class DbKit
 
             pstet = conn.prepareStatement(sql);   //发送sql语句并得到结果集
 
-              pstet.execute();
+            pstet.execute();
 
 //            while (rs.next()){  // 判断数据集中是否有数据
 //                out.add(rs.getString(1));
 //            }
 
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             e.printStackTrace();
-        }
-        finally {
+        } finally
+        {
             clossConnection(conn);
             clossStatement(pstet);
         }
 
     }
 
-    private static   void clossConnection(Connection conn ){
-        try {
-            if(conn != null && !conn.isClosed()){
+    private static void clossConnection(Connection conn)
+    {
+        try
+        {
+            if (conn != null && !conn.isClosed())
+            {
                 conn.close();
             }
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             e.printStackTrace();
         }
     }
 
-    private   static  void clossStatement(PreparedStatement pstet ){
-        try {
-            if(pstet != null) {
+    private static void clossStatement(PreparedStatement pstet)
+    {
+        try
+        {
+            if (pstet != null)
+            {
                 pstet.close();
             }
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             e.printStackTrace();
         }
 
     }
-    private static void clossResultSet(ResultSet rs ){
-        try {
-            if(rs != null) {
+
+    private static void clossResultSet(ResultSet rs)
+    {
+        try
+        {
+            if (rs != null)
+            {
                 rs.close();
             }
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             e.printStackTrace();
         }
     }
-
 
 
 }
