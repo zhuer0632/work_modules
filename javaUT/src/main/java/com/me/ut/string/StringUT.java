@@ -159,7 +159,14 @@ public class StringUT
      */
     public static String root()
     {
-        return StringUT.class.getResource("/").getPath();
+
+        String s = StringUT.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+        if (s.endsWith(".jar"))
+        {
+            s = s.substring(0, s.lastIndexOf("\\"));
+        }
+        return s;
+
     }
 
     /**
@@ -189,8 +196,6 @@ public class StringUT
         }
         return stringBuilder.toString();
     }
-
-
 
 
 }

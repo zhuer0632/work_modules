@@ -14,11 +14,12 @@ public class PropertiesUT
         Properties props = new Properties();
         try
         {
-            InputStream in = PropertiesUT.class.getClassLoader().getResourceAsStream(filePath);
+            InputStream in = new FileInputStream(new File(filePath));
             props.load(in);
             String value = props.getProperty(key);
             return value;
-        } catch (Exception e)
+        } catch
+        (Exception e)
         {
             e.printStackTrace();
             return null;

@@ -20,8 +20,8 @@ public class StringTest
     public void test01()
     {
 
-        String out = ConnUrlAnalyse.getIP("jdbc:jtds:sqlserver://127.0.0.1:1433;databaseName=bea;SelectMethod=cursor");
-        logger.debug(out);
+//        String out = ConnUrlAnalyse.getIP("jdbc:jtds:sqlserver://127.0.0.1:1433;databaseName=bea;SelectMethod=cursor");
+//        logger.debug(out);
 
     }
 
@@ -49,11 +49,11 @@ public class StringTest
         //
         //jdbc:mysql://127.0.0.1:3306/cms?charachterEncoding=UTF-8;
         // jdbc:jtds:sqlserver://127.0.0.1:1433;databaseName=bea;SelectMethod=cursor
-        String url = "jdbc:jtds:sqlserver://127.0.0.1:1433;databaseName=bea;SelectMethod=cursor";
-        url = StringUT.replace(url, ".*:\\d{4};databaseName=(.*);.*", "haha");
+//        String url = "jdbc:jtds:sqlserver://127.0.0.1:1433;databaseName=bea;SelectMethod=cursor";
+//        url = StringUT.replace(url, ".*:\\d{4};databaseName=(.*);.*", "haha");
 
         //url=url.replaceAll("cms","xxx");
-        logger.debug(url);
+//        logger.debug(url);
 
     }
 
@@ -63,4 +63,7 @@ public class StringTest
         String rootpath = StringUT.root();
         System.out.println(rootpath);
     }
+
+
+
 }
