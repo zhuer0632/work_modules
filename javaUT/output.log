@@ -151,3 +151,7 @@
 2013-04-19 18:09:52 [com.me.ut.string.test.StringTest]-[DEBUG] 1830039
 2013-04-19 18:11:05 [com.me.ut.crpt.md5.Test01]-[DEBUG] 21232f297a57a5a743894a0e4a801fc3
 2013-04-19 18:11:05 [com.me.ut.string.test.StringTest]-[DEBUG] 1830039
+2013-04-22 09:37:11 [com.me.ut.crpt.md5.Test01]-[DEBUG] 21232f297a57a5a743894a0e4a801fc3
+2013-04-22 09:37:11 [com.me.ut.string.test.StringTest]-[DEBUG] 1830039
+2013-04-23 09:54:46 [com.me.ut.crpt.md5.Test01]-[DEBUG] 21232f297a57a5a743894a0e4a801fc3
+2013-04-23 09:54:46 [com.me.ut.string.test.StringTest]-[DEBUG] 1830039
