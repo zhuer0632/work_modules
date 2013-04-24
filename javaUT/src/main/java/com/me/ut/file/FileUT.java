@@ -16,6 +16,18 @@ public class FileUT
 
 
     /**
+     * 取得项目的根目录
+     *
+     * @return
+     */
+    public static String getClassRootPath()
+    {
+        String path = FileUT.class.getResource("/").getPath();
+        return path;
+    }
+
+
+    /**
      * 检查folderPath下是否存在文件名fileName，如果存在则以fileName为基础生成一个不存在的文件名
      * <br>返回值是完整路径
      *
@@ -62,7 +74,6 @@ public class FileUT
 
 
     /**
-     *
      * 取得指定路径下的所有文件的名字
      *
      * @param dir

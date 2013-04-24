@@ -17,14 +17,14 @@ public class ConnTest
     @Test
     public void test01()
     {
-        String ip = ConnUrlAnalyse.getIP(PropertiesUT.getProV("db.properties", "jdbc.url"));
-        logger.debug(ip);
-
-        String port = ConnUrlAnalyse.getPort(PropertiesUT.getProV("db.properties", "jdbc.url"));
-        logger.debug(port);
-
-        String dbname = ConnUrlAnalyse.getDbName(PropertiesUT.getProV("db.properties", "jdbc.url"));
-        logger.debug(dbname);
+//        String ip = ConnUrlAnalyse.getIP(PropertiesUT.getProV("db.properties", "jdbc.url"));
+//        logger.debug(ip);
+//
+//        String port = ConnUrlAnalyse.getPort(PropertiesUT.getProV("db.properties", "jdbc.url"));
+//        logger.debug(port);
+//
+//        String dbname = ConnUrlAnalyse.getDbName(PropertiesUT.getProV("db.properties", "jdbc.url"));
+//        logger.debug(dbname);
 
     }
 

@@ -23,7 +23,7 @@ public class BeanUtils
      * @param vo
      * @return
      */
-    public static <T> List<String> getErrFromValidator(T vo)
+    public static <T> List<String>  getErrFromValidator(T vo)
     {
         List<String> errs = new LinkedList<String>();
 

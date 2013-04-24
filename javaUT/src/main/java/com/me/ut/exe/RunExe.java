@@ -24,10 +24,12 @@ public class RunExe
         {
             System.out.println("正在执行命令：" + command);
             Process pro = Runtime.getRuntime().exec(command);
-            InputStream in = pro.getInputStream();
-            writeStream(in);
-            int i = pro.waitFor();
-            logger.debug("执行结果："+i+">>>0表示成功，其他是错误");
+//            InputStream in = pro.getInputStream();
+//            writeStream(in);
+//            int i = pro.waitFor();
+
+//            logger.debug("执行结果："+i+">>>0表示成功，其他是错误");
+            logger.debug("执行结果：>>0表示成功，其他是错误");
         } catch (Exception e)
         {
             e.printStackTrace();
@@ -46,7 +48,7 @@ public class RunExe
             String line = null;
             while ((line = reader.readLine()) != null)
             {
-                sb.append(line + "\n");
+                sb.append(line + "\\r\\n");
             }
         } catch (IOException e)
         {
