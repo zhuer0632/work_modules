@@ -14,85 +14,86 @@ public class DatetimeUT
 
     /**
      * 返回 yyyy-MM-dd日期部分
-     * 
+     *
      * @return
      */
     public static String getDate(Date date)
     {
         DateConverter d = new DateConverter();
         String[] datePattern =
-        {
-                "yyyy-MM-dd"
-        };
+                {
+                        "yyyy-MM-dd"
+                };
 
         d.setPatterns(datePattern);
         ConvertUtils.register(d,
-                              java.util.Date.class);
+                java.util.Date.class);
 
         Object obj = d.convert(String.class,
-                               date);
+                date);
 
         return obj.toString();
     }
 
     /**
      * 返回 yyyy-MM-dd HH:mm:ss
-     * 
+     *
      * @return
      */
     public static String getDatetime(Date date)
     {
         DateConverter d = new DateConverter();
         String[] datePattern =
-        {
-            "yyyy-MM-dd HH:mm:ss"
-        };
+                {
+                        "yyyy-MM-dd HH:mm:ss"
+                };
 
         d.setPatterns(datePattern);
         ConvertUtils.register(d,
-                              java.util.Date.class);
+                java.util.Date.class);
 
         Object obj = d.convert(String.class,
-                               date);
+                date);
 
         return obj.toString();
     }
-    
+
     /**
+     * 返回 yyyy-MM-dd HH:mm:ss.SSS
      *
-     * 返回 yyyy-MM-dd HH:mm:ss.SSS 
-     * 
      * @return
      */
     public static String getDatetimeStamp(Date date)
     {
         DateConverter d = new DateConverter();
         String[] datePattern =
-        {
-            "yyyy-MM-dd HH:mm:ss.SSS"
-        };
+                {
+                        "yyyy-MM-dd HH:mm:ss.SSS"
+                };
 
         d.setPatterns(datePattern);
         ConvertUtils.register(d,
-                              java.util.Date.class);
+                java.util.Date.class);
 
         Object obj = d.convert(String.class,
-                               date);
+                date);
 
         return obj.toString();
     }
 
     /**
      * 取得服务器当前时间
+     *
      * @return
      */
     public static Date getNow()
     {
-            return new Date();
+        return new Date();
     }
 
     /**
      * 返回模板 yyyy_MM_dd_HH_mm
+     *
      * @return
      */
     public static String getNow_str()
@@ -115,15 +116,16 @@ public class DatetimeUT
 
     /**
      * 返回模板 yyyy_MM_dd
+     *
      * @return
      */
     public static String getDate_str()
     {
         DateConverter d = new DateConverter();
         String[] datePattern =
-         {
+                {
                         "yyyy_MM_dd"
-         };
+                };
 
         d.setPatterns(datePattern);
         ConvertUtils.register(d,
@@ -141,8 +143,7 @@ public class DatetimeUT
     }
 
     /**
-     *
-     *  字符串转java.util.Date ,字符串格式必须是 yyyy-MM-dd HH:mm:ss
+     * 字符串转java.util.Date ,字符串格式必须是 yyyy-MM-dd HH:mm:ss
      *
      * @param dateStr
      * @return
@@ -157,5 +158,75 @@ public class DatetimeUT
         Date d = formatter.parse(dateStr,
                 new ParsePosition(0));
         return d;
+    }
+
+
+    /**
+     * 返回格式 yyyyMMdd
+     *
+     * @return
+     */
+    public static String getNowstr()
+    {
+        DateConverter d = new DateConverter();
+        String[] datePattern =
+                {
+                        "yyyyMMdd"
+                };
+
+        d.setPatterns(datePattern);
+        ConvertUtils.register(d,
+                java.util.Date.class);
+
+        Object obj = d.convert(String.class,
+                new Date());
+
+        return obj.toString();
+    }
+
+    /**
+     * 返回格式 MMdd
+     *
+     * @return
+     */
+    public static String getMMdd(Date date)
+    {
+        DateConverter d = new DateConverter();
+        String[] datePattern =
+                {
+                        "MMdd"
+                };
+
+        d.setPatterns(datePattern);
+        ConvertUtils.register(d,
+                java.util.Date.class);
+
+        Object obj = d.convert(String.class,
+                date);
+
+        return obj.toString();
+    }
+
+    /**
+     * 返回格式 yyyy
+     *
+     * @return
+     */
+    public static String getYear(Date date)
+    {
+        DateConverter d = new DateConverter();
+        String[] datePattern =
+                {
+                        "yyyy"
+                };
+
+        d.setPatterns(datePattern);
+        ConvertUtils.register(d,
+                java.util.Date.class);
+
+        Object obj = d.convert(String.class,
+                date);
+
+        return obj.toString();
     }
 }
