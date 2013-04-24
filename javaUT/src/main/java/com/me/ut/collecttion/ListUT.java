@@ -30,12 +30,13 @@ public class ListUT
         {
             if (list.get(i).toLowerCase().equals(item.toLowerCase()))
             {
-                        return true;
+                return true;
             }
         }
         return false;
     }
 
+<<<<<<< HEAD
     /**
      *
      * 对于小数据，手动裁剪分页
@@ -49,17 +50,30 @@ public class ListUT
     {
 
 
+=======
+    public static List cutByPage(List list,
+                                 int pageNo, int pageSize)
+    {
+
+>>>>>>> bd57a5be635e10b020cac4edc0c7d15aadedb06d
         List listOut = new ArrayList();
         if (list == null || list.size() == 0)
         {
             return list;
         }
 
+<<<<<<< HEAD
 
         // 依据pageSize的取值情况判断所有异常
         if (pageSize <= 0)
         {
             throw new RuntimeException( "没有指定分页大小");
+=======
+        // 依据pageSize的取值情况判断所有异常
+        if (pageSize <= 0)
+        {
+            throw new RuntimeException("没有指定分页大小");
+>>>>>>> bd57a5be635e10b020cac4edc0c7d15aadedb06d
         }
         if (pageSize >= list.size())
         {
@@ -79,7 +93,11 @@ public class ListUT
 
             if (pageNo <= 0)
             {
+<<<<<<< HEAD
                 throw new RuntimeException( "没有指定页码");
+=======
+                throw new RuntimeException("没有指定页码");
+>>>>>>> bd57a5be635e10b020cac4edc0c7d15aadedb06d
             }
 
             if (pageNo > 0)
@@ -130,8 +148,13 @@ public class ListUT
 
 
     /**
+<<<<<<< HEAD
      *
      * 根据Map中的某个字段进行排序
+=======
+     * 根据Map中的某个字段进行排序
+     *
+>>>>>>> bd57a5be635e10b020cac4edc0c7d15aadedb06d
      * @param colname
      * @return
      */
@@ -157,8 +180,12 @@ public class ListUT
                                 i,
                                 j);
                     }
+<<<<<<< HEAD
                 }
                 else
+=======
+                } else
+>>>>>>> bd57a5be635e10b020cac4edc0c7d15aadedb06d
                 {
                     Date d = (Date) map.get(colname);
 

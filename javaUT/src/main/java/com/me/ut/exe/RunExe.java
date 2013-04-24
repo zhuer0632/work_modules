@@ -37,6 +37,30 @@ public class RunExe
     }
 
     /**
+     *
+     * 阻塞状态的
+     * @param command
+     * @throws InterruptedException
+     */
+    public static void ec_2(String command) throws InterruptedException
+    {
+        try
+        {
+            System.out.println("正在执行命令：" + command);
+            Process pro = Runtime.getRuntime().exec(command);
+            InputStream in = pro.getInputStream();
+            writeStream(in);
+            int i = pro.waitFor();
+
+//            logger.debug("执行结果："+i+">>>0表示成功，其他是错误");
+            logger.debug("执行结果：>>0表示成功，其他是错误");
+        } catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    /**
      * InputStream转为String
      */
     public static void writeStream(InputStream is)
