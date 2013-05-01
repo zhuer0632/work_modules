@@ -26,6 +26,7 @@ public class SysStart extends ContextLoaderListener implements ServletContextLis
     @Override
     public void contextInitialized(ServletContextEvent event)
     {
+        java.lang.System.getenv("VCAP_SERVICES");
         String syspath = event.getServletContext().getContextPath();
         SysConst.SYS_PATH = syspath;
         System.out.println("项目名称:" + syspath);

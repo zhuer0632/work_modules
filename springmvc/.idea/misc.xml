@@ -5,15 +5,17 @@
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$" />
+    <file type="web" url="file://$PROJECT_DIR$/../web" />
   </component>
   <component name="IdProvider" IDEtalkID="4AD8851653CAF9BE8897BBD7579CCA21" />
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="D:/work_modules/commonDao/pom.xml" />
-        <option value="D:/work_modules/javaUT/pom.xml" />
-        <option value="D:/work_modules/springmvc/pom.xml" />
+        <option value="$PROJECT_DIR$/../commonDao/pom.xml" />
+        <option value="$PROJECT_DIR$/../javaUT/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/../web/pom.xml" />
       </list>
     </option>
   </component>
