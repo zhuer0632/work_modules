@@ -337,4 +337,16 @@ public class StringUT
         return stringBuilder.toString();
     }
 
+
+    public static String Base64_decode_url(String args)
+    {
+        args=args.replace('-','+');
+        args=args.replace('_','/');
+        args=args.replace("\\.","=");
+        args=   Base64_decode(args,"UTF-8");
+
+        return args;
+    }
+
+
 }

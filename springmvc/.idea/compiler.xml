@@ -25,6 +25,7 @@
         <module name="commonDao" />
         <module name="javaUT" />
         <module name="springmvc" />
+        <module name="web" />
         <module name="work_purehttp" />
       </profile>
     </annotationProcessing>
