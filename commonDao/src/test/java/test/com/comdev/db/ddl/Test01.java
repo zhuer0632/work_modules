@@ -28,13 +28,10 @@ public class Test01
     public  void test02()
     {
 
-<<<<<<< HEAD
-=======
         MysqlDBMeta db = new MysqlDBMeta();
         List flag = db.getdbNames();
         logger.debug(flag);
 
->>>>>>> c954ad3a02513463848dcd0ffb1f408412a3bf7c
     }
 
 

@@ -4,7 +4,9 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Array;
 import java.util.*;
@@ -28,8 +30,7 @@ public class StringUT
         try
         {
             out = new String(str.getBytes("UTF-8"), "ISO-8859-1");
-        }
-        catch (UnsupportedEncodingException e)
+        } catch (UnsupportedEncodingException e)
         {
             e.printStackTrace();
         }
@@ -48,14 +49,12 @@ public class StringUT
         try
         {
             out = new String(str.getBytes("ISO-8859-1"), "UTF-8");
-        }
-        catch (UnsupportedEncodingException e)
+        } catch (UnsupportedEncodingException e)
         {
             e.printStackTrace();
         }
         return out;
     }
-
 
 
     public static boolean isIE(HttpServletRequest request)
@@ -80,7 +79,6 @@ public class StringUT
 
     public static boolean isChrome(HttpServletRequest request)
     {
-
         boolean out = false;
 
         // chrome:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.4 (KHTML,
@@ -127,8 +125,7 @@ public class StringUT
         try
         {
             s = Base64.encodeBase64String(input.getBytes(code));
-        }
-        catch (UnsupportedEncodingException e)
+        } catch (UnsupportedEncodingException e)
         {
             e.printStackTrace();
         }
@@ -144,15 +141,12 @@ public class StringUT
         try
         {
             out = new String(bs, code);
-        }
-        catch (UnsupportedEncodingException e)
+        } catch (UnsupportedEncodingException e)
         {
             e.printStackTrace();
         }
         return out;
     }
-
-
 
 
     public static List<String> split(String in)
@@ -180,7 +174,9 @@ public class StringUT
     public static boolean isEmpty(Object obj)
     {
         if (obj == null)
+        {
             return true;
+        }
 
         if (obj instanceof StringBuilder)
         {
@@ -197,11 +193,17 @@ public class StringUT
         }
 
         if (obj.getClass().isArray())
+        {
             return Array.getLength(obj) == 0;
+        }
         if (obj instanceof Collection<?>)
+        {
             return ((Collection<?>) obj).isEmpty();
+        }
         if (obj instanceof Map<?, ?>)
+        {
             return ((Map<?, ?>) obj).isEmpty();
+        }
         return false;
     }
 
@@ -265,7 +267,8 @@ public class StringUT
             if (i == errs.size() - 1)
             {
                 stringBuilder.append(errs.get(i));
-            } else
+            }
+            else
             {
                 stringBuilder.append(errs.get(i) + s);
             }
@@ -329,7 +332,8 @@ public class StringUT
             if (i == list.size() - 1)
             {
                 stringBuilder.append("\'" + s + "\'");
-            } else
+            }
+            else
             {
                 stringBuilder.append("\'" + s + "\',");
             }
@@ -340,13 +344,85 @@ public class StringUT
 
     public static String Base64_decode_url(String args)
     {
-        args=args.replace('-','+');
-        args=args.replace('_','/');
-        args=args.replace("\\.","=");
-        args=   Base64_decode(args,"UTF-8");
+        args = args.replace('-', '+');
+        args = args.replace('_', '/');
+        args = args.replace("\\.", "=");
+        args = Base64_decode(args, "UTF-8");
 
         return args;
     }
 
 
+    /**
+     * 是不是SWFUpload的请求
+     *
+     * @param httpreq
+     * @return
+     */
+    public static boolean isSWF(HttpServletRequest httpreq)
+    {
+
+        if (httpreq.getHeader("User-Agent").equals("Shockwave Flash"))
+        {
+            return true;
+        }
+        return false;
+
+    }
+
+    /**
+     * 取得JESSIONID
+     *
+     * @param request
+     * @return
+     */
+    public static String JSESSIONID(HttpServletRequest request)
+    {
+        String out = "";
+        Cookie[] cookies = request.getCookies();
+
+        for (int i = 0; i < cookies.length; i++)
+        {
+            Cookie cookie = cookies[i];
+            if (cookie.getName().equals("JSESSIONID"))
+            {
+                return cookie.getValue();
+            }
+        }
+        return out;
+    }
+
+    public static void setJSESSIONID(HttpServletRequest request, String jsessionid, HttpServletResponse reps)
+    {
+        Cookie[] cookies = request.getCookies();
+
+        StringBuilder stringBuilder = new StringBuilder();
+
+        boolean flag = false;
+        for (int i = 0; i < cookies.length; i++)
+        {
+            Cookie cookie = cookies[i];
+            if (cookie.getName().equals("JSESSIONID"))
+            {
+                request.getCookies()[i].setValue(jsessionid);
+                flag = true;
+            }
+            if (i == cookies.length - 1)
+            {
+                stringBuilder.append(cookie.getName() + "=" + cookie.getValue());
+            }
+            else
+            {
+                stringBuilder.append(cookie.getName() + "=" + cookie.getValue() + ";");
+            }
+        }
+
+        if (!flag)
+        {
+            stringBuilder.append(";JSESSIONID=" + jsessionid);
+        }
+
+        reps.setHeader("Cookie", stringBuilder.toString());
+
+    }
 }
