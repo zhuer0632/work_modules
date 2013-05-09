@@ -30,6 +30,7 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-tx:3.2.2.RELEASE" />
           <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.12" />
           <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-core-asl:1.9.12" />
+          <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.1.27" />
           <element id="library" level="project" name="Maven: org.apache.geronimo.specs:geronimo-servlet_3.0_spec:1.0" />
           <element id="library" level="project" name="Maven: org.nutz:nutz:1.b.47" />
           <element id="library" level="project" name="Maven: net.sourceforge.jtds:jtds:1.2.7" />

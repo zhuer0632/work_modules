@@ -4,5 +4,27 @@
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
+<<<<<<< HEAD
+=======
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/springmvc" />
+  </component>
+  <component name="IdProvider" IDEtalkID="71ACEA1FD72D9226B98C106FE4D3DEFF" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/commonDao/pom.xml" />
+        <option value="$PROJECT_DIR$/javaUT/pom.xml" />
+        <option value="$PROJECT_DIR$/myHttpClient/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/springmvc/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK" />
+>>>>>>> da10df01bdf26216090a6c0f1f5e741e71cbe97d
 </project>
 

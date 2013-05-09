@@ -404,7 +404,7 @@ public class ZipUT
      * 
      * 没有任何文件
      * 
-     * @param file
+     * @param folder
      * @return
      */
     private static boolean isEmptyFolder(File folder)
