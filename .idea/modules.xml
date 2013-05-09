@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ProjectModuleManager">
-    <modules />
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/commonDao/commonDao.iml" filepath="$PROJECT_DIR$/commonDao/commonDao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commonTest/commonTest.iml" filepath="$PROJECT_DIR$/commonTest/commonTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaUT/javaUT.iml" filepath="$PROJECT_DIR$/javaUT/javaUT.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myHttpClient/myHttpClient.iml" filepath="$PROJECT_DIR$/myHttpClient/myHttpClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springmvc/springmvc.iml" filepath="$PROJECT_DIR$/springmvc/springmvc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springmvcmaven/springmvcmaven.iml" filepath="$PROJECT_DIR$/springmvcmaven/springmvcmaven.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web/web.iml" filepath="$PROJECT_DIR$/web/web.iml" />
+    </modules>
   </component>
 </project>
 
