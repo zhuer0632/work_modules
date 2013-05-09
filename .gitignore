@@ -1,3 +1,8 @@
-*svn
+.idea/
+*.iml
+*.war
+*.jar
 *.class
-target/
+*.swf
+*.swc
+*.log
