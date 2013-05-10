@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: test.com.comdev.db.ddl.Test01
--------------------------------------------------------------------------------
-<<<<<<< HEAD
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.104 sec
-=======
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.354 sec
->>>>>>> c954ad3a02513463848dcd0ffb1f408412a3bf7c

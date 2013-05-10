@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="purehttp:war">
-    <output-path>D:/workspace_me/purehttp/target</output-path>
-    <root id="archive" name="purehttp.war">
-      <element id="artifact" artifact-name="purehttp:war exploded" />
-    </root>
-  </artifact>
-</component>
