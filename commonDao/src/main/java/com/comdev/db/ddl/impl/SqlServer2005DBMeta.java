@@ -1,7 +1,8 @@
-package com.comdev.db.ddl;
+package com.comdev.db.ddl.impl;
 
 import com.comdev.db.DbKit;
 import com.comdev.db.dbinfovo.ColumnInfo;
+import com.comdev.db.ddl.IDbMeta;
 import com.comdev.ut.PropertiesUT;
 import com.me.ut.string.StringUT;
 import org.apache.log4j.Logger;
@@ -15,9 +16,9 @@ import java.util.List;
  * Date: 13-4-7
  * Time: 上午3:14
  */
-public class SqlServerDBMeta implements IDbMeta
+public class SqlServer2005DBMeta implements IDbMeta
 {
-    private static final Logger logger = Logger.getLogger(SqlServerDBMeta.class);
+    private static final Logger logger = Logger.getLogger(SqlServer2005DBMeta.class);
 
     @Override
     /**

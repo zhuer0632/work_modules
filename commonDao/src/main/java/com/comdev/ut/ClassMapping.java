@@ -12,8 +12,7 @@ public class ClassMapping
 
     public static void CreateTable(Class clz)
     {
-        DbKit.getDao().create(clz,true);
+        DbKit.getDao().create(clz, true);
     }
-
 
 }

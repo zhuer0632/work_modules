@@ -1,7 +1,6 @@
 package test.com.comdev.db.ddl;
 
-import com.comdev.db.ddl.MysqlDBMeta;
-import com.comdev.db.ddl.SqlServerDBMeta;
+import com.comdev.db.ddl.impl.MysqlDBMeta;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 

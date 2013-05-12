@@ -2,6 +2,8 @@ package com.comdev.db.ddl;
 
 import com.comdev.db.DbKit;
 import com.comdev.db.dbinfovo.ColumnInfo;
+import com.comdev.db.ddl.impl.MysqlDBMeta;
+import com.comdev.db.ddl.impl.SqlServer2000DBMeta;
 import com.comdev.exceptions.noImplException;
 import org.nutz.dao.DB;
 
@@ -24,7 +26,7 @@ public class DbMetaProxy implements IDbMeta
             iDbMeta = new MysqlDBMeta();
         } else if (DbKit.getDao().meta().getType() == DB.SQLSERVER)
         {
-            iDbMeta = new SqlServerDBMeta();
+            iDbMeta = new SqlServer2000DBMeta();
         } else
         {
             throw new noImplException();

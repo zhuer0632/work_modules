@@ -7,4 +7,7 @@ package com.comdev.db.dbinfovo;
  */
 public class ColumnInfo
 {
+
+
+
 }

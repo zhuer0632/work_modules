@@ -1,9 +1,11 @@
-package com.comdev.db.ddl;
+package com.comdev.db.ddl.impl;
 
+import com.comdev.db.DbKit;
 import com.comdev.db.dbinfovo.ColumnInfo;
-import com.comdev.exceptions.noImplException;
+import com.comdev.db.ddl.IDbMeta;
 import com.comdev.ut.PropertiesUT;
 import com.me.ut.string.StringUT;
+import org.apache.log4j.Logger;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -12,15 +14,41 @@ import java.util.List;
 /**
  * User: zhu
  * Date: 13-4-7
- * Time: 上午2:05
+ * Time: 上午3:14
  */
-public class MysqlDBMeta implements IDbMeta
+public class SqlServer2012DBMeta implements IDbMeta
 {
+    private static final Logger logger = Logger.getLogger(SqlServer2012DBMeta.class);
+
     @Override
+    /**
+     * @return 1:成功，2：失败：3：数据库已经存在，没有操作，直接返回
+     */
     public int createDb(String dbname)
     {
-           throw new noImplException();
+
+        if (!checkDbConfig())
+        {
+            throw new RuntimeException("数据库配置错误");
+        }
+
+        //数据库已经存在返回3
+        if (checkHasDB(dbname))
+        {
+            return 3;
+        }
+
+        try
+        {
+            DbKit.execute("CREATE DATABASE " + dbname);
+        } catch (Exception e)
+        {
+            e.printStackTrace();
+            return 2;
+        }
+        return 1;
     }
+
 
     @Override
     public List<String> getdbNames()
@@ -36,7 +64,7 @@ public class MysqlDBMeta implements IDbMeta
 
             conn = DriverManager.getConnection(PropertiesUT.get_url(), PropertiesUT.get_username(), PropertiesUT.get_password());   //加载驱动并与数据库连接
 
-            String sql = "show databases";   //sql  语句
+            String sql = "use master;select [name] from [sysdatabases] order by [name]";   //sql  语句
 
             pstet = conn.prepareStatement(sql);   //发送sql语句并得到结果集
 
@@ -57,6 +85,75 @@ public class MysqlDBMeta implements IDbMeta
             clossStatement(pstet);
         }
         return out;
+    }
+
+    @Override
+    public boolean checkDbConfig()
+    {
+        String url = PropertiesUT.get_url();
+        String username = PropertiesUT.get_username();
+        String password = PropertiesUT.get_password();
+        String driverclass = PropertiesUT.get_driverclass();
+
+        Connection con = null;
+        try
+        {
+            Class.forName(driverclass);
+            con = DriverManager.getConnection(url, username, password);
+        } catch (Exception e)
+        {
+            return false;
+        } finally
+        {
+            if (con != null)
+            {
+                try
+                {
+                    if (con.isClosed())
+                    {
+                        con.close();
+                    }
+                } catch (SQLException e)
+                {
+                }
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public boolean checkHasDB(String dbName)
+    {
+        String url = PropertiesUT.get_url();
+        String username = PropertiesUT.get_username();
+        String password = PropertiesUT.get_password();
+        String driverclass = PropertiesUT.get_driverclass();
+
+        Connection con = null;
+        try
+        {
+            Class.forName(driverclass);
+            url = StringUT.replace(url, ".*:\\d{4};databaseName=(.*);.*", dbName);
+            con = DriverManager.getConnection(url, username, password);
+        } catch (Exception e)
+        {
+            return false;
+        } finally
+        {
+            if (con != null)
+            {
+                try
+                {
+                    if (con.isClosed())
+                    {
+                        con.close();
+                    }
+                } catch (SQLException e)
+                {
+                }
+            }
+        }
+        return true;
     }
 
     private void clossConnection(Connection conn)
@@ -102,80 +199,6 @@ public class MysqlDBMeta implements IDbMeta
         }
     }
 
-
-    @Override
-    public boolean checkDbConfig()
-    {
-
-        String url = PropertiesUT.get_url();
-        String username = PropertiesUT.get_username();
-        String password = PropertiesUT.get_password();
-        String driverclass = PropertiesUT.get_driverclass();
-
-        Connection con = null;
-        try
-        {
-            Class.forName(driverclass);
-            con = DriverManager.getConnection(url, username, password);
-        } catch (Exception e)
-        {
-            return false;
-        } finally
-        {
-            if (con != null)
-            {
-                try
-                {
-                    if (con.isClosed())
-                    {
-                        con.close();
-                    }
-                } catch (SQLException e)
-                {
-
-                }
-            }
-        }
-        return true;
-    }
-
-    @Override
-    public boolean checkHasDB(String dbName)
-    {
-
-        String url = PropertiesUT.get_url();
-        String username = PropertiesUT.get_username();
-        String password = PropertiesUT.get_password();
-        String driverclass = PropertiesUT.get_driverclass();
-
-        Connection con = null;
-        try
-        {
-            //jdbc:mysql://127.0.0.1:3306/cms?charachterEncoding=UTF-8;
-            Class.forName(driverclass);
-            url= StringUT.replace(url,".*:\\d{4}/(.*)\\?.*",dbName);
-            con = DriverManager.getConnection(url, username, password);
-        } catch (Exception e)
-        {
-            return false;
-        } finally
-        {
-            if (con != null)
-            {
-                try
-                {
-                    if (con.isClosed())
-                    {
-                        con.close();
-                    }
-                } catch (SQLException e)
-                {
-
-                }
-            }
-        }
-        return true;
-    }
 
     @Override
     public List<String> tableNames()
