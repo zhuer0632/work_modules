@@ -12,6 +12,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: springmvcmaven:springmvcmaven:1.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: javaUT:javaUT:0.0.1-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.geronimo.specs:geronimo-servlet_3.0_spec:1.0" level="project" />
+    <orderEntry type="module" module-name="springmvcmaven" />
     <orderEntry type="library" name="Maven: junit:junit:4.10" level="project" />
     <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:1.1" level="project" />
     <orderEntry type="library" name="Maven: log4j:log4j:1.2.17" level="project" />
@@ -35,7 +38,7 @@
     <orderEntry type="library" name="Maven: net.sourceforge.jtds:jtds:1.2.7" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.24" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba:druid:0.2.13" level="project" />
-    <orderEntry type="library" name="Maven: javaUT:javaUT:0.0.1-SNAPSHOT" level="project" />
+    <orderEntry type="module" module-name="javaUT" />
     <orderEntry type="library" name="Maven: commons-beanutils:commons-beanutils:1.8.3" level="project" />
     <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.7" level="project" />
     <orderEntry type="library" name="Maven: commons-collections:commons-collections:3.2.1" level="project" />

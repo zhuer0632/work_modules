@@ -11,8 +11,6 @@ import org.nutz.dao.entity.Entity;
 import org.nutz.dao.impl.NutDao;
 import org.nutz.dao.pager.Pager;
 import org.nutz.dao.sql.Sql;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -54,15 +52,15 @@ public class DbKit
     }
 
 
-    /**
-     * 取得某个Control的实例
-     */
-    public static <T> T getBean(Class<T> clz)
-    {
-        ApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"beans.xml"});
-        T t = context.getBean(clz);
-        return t;
-    }
+//    /**
+//     * 取得某个Control的实例
+//     */
+//    public static <T> T getBean(Class<T> clz)
+//    {
+//        ApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"beans.xml"});
+//        T t = context.getBean(clz);
+//        return t;
+//    }
 
 
     public static Dao getDao()

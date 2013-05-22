@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.002" errors="0" skipped="0" tests="4" name="com.me.ut.string.test.StringTest">
+<testsuite failures="0" time="0.076" errors="0" skipped="0" tests="4" name="com.me.ut.string.test.StringTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files (x86)\Java\jdk1.6.0_25\jre\bin"/>
@@ -7,10 +7,8 @@
     <property name="java.vm.vendor" value="Sun Microsystems Inc."/>
     <property name="java.vendor.url" value="http://java.sun.com/"/>
     <property name="path.separator" value=";"/>
-    <property name="guice.disable.misplaced.annotation.check" value="true"/>
     <property name="java.vm.name" value="Java HotSpot(TM) Client VM"/>
     <property name="file.encoding.pkg" value="sun.io"/>
-    <property name="idea.launcher.port" value="7535"/>
     <property name="user.country" value="CN"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="Service Pack 3"/>
@@ -18,17 +16,19 @@
     <property name="user.dir" value="D:\work_modules\javaUT"/>
     <property name="java.runtime.version" value="1.6.0_25-b06"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="basedir" value="D:\work_modules\javaUT"/>
     <property name="java.endorsed.dirs" value="C:\Program Files (x86)\Java\jdk1.6.0_25\jre\lib\endorsed"/>
     <property name="os.arch" value="x86"/>
-    <property name="java.io.tmpdir" value="d:\TEMP\FileTemp\"/>
+    <property name="surefire.real.class.path" value="C:\Users\ADMINI~1\LOCALS~1\Temp\surefirebooter4999556673966198487.jar"/>
+    <property name="java.io.tmpdir" value="C:\Users\ADMINI~1\LOCALS~1\Temp\"/>
     <property name="line.separator" value="
 "/>
     <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows XP"/>
-    <property name="classworlds.conf" value="D:\openSource_Java\maven\apache-maven-3.0.4-bin\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="GBK"/>
-    <property name="java.library.path" value="C:\Program Files (x86)\Java\jdk1.6.0_25\bin;.;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\JetBrains\IntelliJ IDEA 12.1.1\bin\..\.\bin;D:\mysql\mysql5.0.90_hz\bin;C:\Program Files (x86)\PostgreSQL\9.1\bin;C:\Ruby193\bin;D:\openSource_Java\nexus\nexus-2.2-01\bin;C:\Program Files (x86)\Subversion\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Microsoft SQL Server\80\Tools\BINN;D:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\Subversion\bin;D:\Program Files\TortoiseHg\;D:\openSource_Java\maven\apache-maven-3.0.4-bin\bin;D:\mysql_xj\mysql5.0.90_hz\bin;C:\Program Files (x86)\Git\cmd;D:\openSource_Java\Ant\apache-ant-1.8.4-bin\bin;C:\Program Files (x86)\Rational\common;c:\program files (x86)\jetbrains\intellij idea 12.1.1\jre\jre\bin"/>
+    <property name="java.library.path" value="C:\Program Files (x86)\Java\jdk1.6.0_25\jre\bin;.;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:/Program Files (x86)/Genuitec/Common/binary/com.sun.java.jdk.win32.x86_1.6.0.013/jre/bin/client;D:/Program Files (x86)/Genuitec/Common/binary/com.sun.java.jdk.win32.x86_1.6.0.013/jre/bin;C:\Program Files (x86)\UltraEdit-32;D:\mysql\mysql5.0.90_hz\bin;C:\Program Files (x86)\PostgreSQL\9.1\bin;C:\Ruby193\bin;D:\openSource_Java\nexus\nexus-2.2-01\bin;C:\Program Files (x86)\Subversion\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Microsoft SQL Server\80\Tools\BINN;D:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\Subversion\bin;D:\Program Files\TortoiseHg\;D:\openSource_Java\maven\apache-maven-3.0.4-bin\bin;D:\mysql_xj\mysql5.0.90_hz\bin;C:\Program Files (x86)\Git\cmd;D:\openSource_Java\Ant\apache-ant-1.8.4-bin\bin;C:\Program Files (x86)\Rational\common"/>
+    <property name="surefire.test.class.path" value="D:\work_modules\javaUT\target\classes;d:\我的文档\.m2\repository\junit\junit\4.10\junit-4.10.jar;d:\我的文档\.m2\repository\org\hamcrest\hamcrest-core\1.1\hamcrest-core-1.1.jar;d:\我的文档\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;d:\我的文档\.m2\repository\commons-beanutils\commons-beanutils\1.8.3\commons-beanutils-1.8.3.jar;d:\我的文档\.m2\repository\commons-logging\commons-logging\1.1.1\commons-logging-1.1.1.jar;d:\我的文档\.m2\repository\commons-codec\commons-codec\1.7\commons-codec-1.7.jar;d:\我的文档\.m2\repository\commons-collections\commons-collections\3.2.1\commons-collections-3.2.1.jar;d:\我的文档\.m2\repository\org\apache\commons\commons-compress\1.4.1\commons-compress-1.4.1.jar;d:\我的文档\.m2\repository\org\tukaani\xz\1.0\xz-1.0.jar;d:\我的文档\.m2\repository\commons-configuration\commons-configuration\1.9\commons-configuration-1.9.jar;d:\我的文档\.m2\repository\commons-lang\commons-lang\2.6\commons-lang-2.6.jar;d:\我的文档\.m2\repository\commons-io\commons-io\2.4\commons-io-2.4.jar;d:\我的文档\.m2\repository\org\apache\commons\commons-lang3\3.1\commons-lang3-3.1.jar;d:\我的文档\.m2\repository\commons-fileupload\commons-fileupload\1.2.2\commons-fileupload-1.2.2.jar;d:\我的文档\.m2\repository\org\springframework\spring-mock\2.0.8\spring-mock-2.0.8.jar;d:\我的文档\.m2\repository\javax\validation\validation-api\1.1.0.CR3\validation-api-1.1.0.CR3.jar;d:\我的文档\.m2\repository\org\hibernate\hibernate-validator\5.0.0.CR4\hibernate-validator-5.0.0.CR4.jar;d:\我的文档\.m2\repository\org\jboss\logging\jboss-logging\3.1.1.GA\jboss-logging-3.1.1.GA.jar;d:\我的文档\.m2\repository\com\fasterxml\classmate\0.8.0\classmate-0.8.0.jar;d:\我的文档\.m2\repository\org\glassfish\web\javax.el\2.2.4\javax.el-2.2.4.jar;d:\我的文档\.m2\repository\javax\el\javax.el-api\2.2.4\javax.el-api-2.2.4.jar;d:\我的文档\.m2\repository\org\apache\geronimo\specs\geronimo-servlet_3.0_spec\1.0\geronimo-servlet_3.0_spec-1.0.jar;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="50.0"/>
     <property name="sun.management.compiler" value="HotSpot Client Compiler"/>
@@ -37,14 +37,13 @@
     <property name="user.timezone" value="Asia/Shanghai"/>
     <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
     <property name="java.specification.version" value="1.6"/>
-    <property name="file.encoding" value="UTF-8"/>
-    <property name="idea.launcher.bin.path" value="C:\Program Files (x86)\JetBrains\IntelliJ IDEA 12.1.1\bin"/>
+    <property name="file.encoding" value="GBK"/>
     <property name="user.name" value="Administrator"/>
-    <property name="java.class.path" value="D:\openSource_Java\maven\apache-maven-3.0.4-bin\boot\plexus-classworlds-2.4.jar;C:\Program Files (x86)\JetBrains\IntelliJ IDEA 12.1.1\lib\idea_rt.jar"/>
+    <property name="java.class.path" value="D:\work_modules\javaUT\target\classes;d:\我的文档\.m2\repository\junit\junit\4.10\junit-4.10.jar;d:\我的文档\.m2\repository\org\hamcrest\hamcrest-core\1.1\hamcrest-core-1.1.jar;d:\我的文档\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;d:\我的文档\.m2\repository\commons-beanutils\commons-beanutils\1.8.3\commons-beanutils-1.8.3.jar;d:\我的文档\.m2\repository\commons-logging\commons-logging\1.1.1\commons-logging-1.1.1.jar;d:\我的文档\.m2\repository\commons-codec\commons-codec\1.7\commons-codec-1.7.jar;d:\我的文档\.m2\repository\commons-collections\commons-collections\3.2.1\commons-collections-3.2.1.jar;d:\我的文档\.m2\repository\org\apache\commons\commons-compress\1.4.1\commons-compress-1.4.1.jar;d:\我的文档\.m2\repository\org\tukaani\xz\1.0\xz-1.0.jar;d:\我的文档\.m2\repository\commons-configuration\commons-configuration\1.9\commons-configuration-1.9.jar;d:\我的文档\.m2\repository\commons-lang\commons-lang\2.6\commons-lang-2.6.jar;d:\我的文档\.m2\repository\commons-io\commons-io\2.4\commons-io-2.4.jar;d:\我的文档\.m2\repository\org\apache\commons\commons-lang3\3.1\commons-lang3-3.1.jar;d:\我的文档\.m2\repository\commons-fileupload\commons-fileupload\1.2.2\commons-fileupload-1.2.2.jar;d:\我的文档\.m2\repository\org\springframework\spring-mock\2.0.8\spring-mock-2.0.8.jar;d:\我的文档\.m2\repository\javax\validation\validation-api\1.1.0.CR3\validation-api-1.1.0.CR3.jar;d:\我的文档\.m2\repository\org\hibernate\hibernate-validator\5.0.0.CR4\hibernate-validator-5.0.0.CR4.jar;d:\我的文档\.m2\repository\org\jboss\logging\jboss-logging\3.1.1.GA\jboss-logging-3.1.1.GA.jar;d:\我的文档\.m2\repository\com\fasterxml\classmate\0.8.0\classmate-0.8.0.jar;d:\我的文档\.m2\repository\org\glassfish\web\javax.el\2.2.4\javax.el-2.2.4.jar;d:\我的文档\.m2\repository\javax\el\javax.el-api\2.2.4\javax.el-api-2.2.4.jar;d:\我的文档\.m2\repository\org\apache\geronimo\specs\geronimo-servlet_3.0_spec\1.0\geronimo-servlet_3.0_spec-1.0.jar;"/>
     <property name="java.vm.specification.version" value="1.0"/>
     <property name="sun.arch.data.model" value="32"/>
     <property name="java.home" value="C:\Program Files (x86)\Java\jdk1.6.0_25\jre"/>
-    <property name="sun.java.command" value="com.intellij.rt.execution.application.AppMain org.codehaus.classworlds.Launcher --fail-fast --strict-checksums install"/>
+    <property name="sun.java.command" value="C:\Users\ADMINI~1\LOCALS~1\Temp\surefirebooter4999556673966198487.jar C:\Users\ADMINI~1\LOCALS~1\Temp\surefire2973829117005788986tmp C:\Users\ADMINI~1\LOCALS~1\Temp\surefire8844789248593503671tmp"/>
     <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="user.language" value="zh"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -53,7 +52,7 @@
     <property name="java.ext.dirs" value="C:\Program Files (x86)\Java\jdk1.6.0_25\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
     <property name="sun.boot.class.path" value="C:\Program Files (x86)\Java\jdk1.6.0_25\jre\lib\resources.jar;C:\Program Files (x86)\Java\jdk1.6.0_25\jre\lib\rt.jar;C:\Program Files (x86)\Java\jdk1.6.0_25\jre\lib\sunrsasign.jar;C:\Program Files (x86)\Java\jdk1.6.0_25\jre\lib\jsse.jar;C:\Program Files (x86)\Java\jdk1.6.0_25\jre\lib\jce.jar;C:\Program Files (x86)\Java\jdk1.6.0_25\jre\lib\charsets.jar;C:\Program Files (x86)\Java\jdk1.6.0_25\jre\lib\modules\jdk.boot.jar;C:\Program Files (x86)\Java\jdk1.6.0_25\jre\classes"/>
     <property name="java.vendor" value="Sun Microsystems Inc."/>
-    <property name="maven.home" value="D:\openSource_Java\maven\apache-maven-3.0.4-bin"/>
+    <property name="localRepository" value="d:\我的文档\.m2\repository"/>
     <property name="file.separator" value="\"/>
     <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -61,8 +60,8 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
   </properties>
-  <testcase time="0" classname="com.me.ut.string.test.StringTest" name="test01"/>
-  <testcase time="0" classname="com.me.ut.string.test.StringTest" name="test02"/>
+  <testcase time="0.002" classname="com.me.ut.string.test.StringTest" name="test01"/>
+  <testcase time="0.003" classname="com.me.ut.string.test.StringTest" name="test02"/>
   <testcase time="0" classname="com.me.ut.string.test.StringTest" name="test03"/>
-  <testcase time="0" classname="com.me.ut.string.test.StringTest" name="test04"/>
+  <testcase time="0.001" classname="com.me.ut.string.test.StringTest" name="test04"/>
 </testsuite>

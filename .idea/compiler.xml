@@ -29,6 +29,7 @@
         <module name="springmvc" />
         <module name="springmvcmaven" />
         <module name="web" />
+        <module name="work_modules" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

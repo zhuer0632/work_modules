@@ -1,110 +1,122 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-    <groupId>springmvcmaven</groupId>
-    <artifactId>springmvcmaven</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+	<groupId>springmvcmaven</groupId>
+	<artifactId>springmvcmaven</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
 
-    <name>springmvcmaven</name>
-    <url>http://maven.apache.org</url>
+	<name>springmvcmaven</name>
+	<url>http://maven.apache.org</url>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 
-    <dependencies>
+	<dependencies>
 
-        <!--测试-->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.10</version>
-        </dependency>
+		<!--测试-->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>
+		</dependency>
 
-        <!--日志管理-->
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
-        </dependency>
-        
-        <!--Servlet API-->
-        <dependency>
-            <groupId>servletapi</groupId>
-            <artifactId>servletapi</artifactId>
-            <version>2.4</version>
-            <scope>provided</scope>
-        </dependency>
+		<!--日志管理-->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
 
-        <!--Freemarker-->
-        <dependency>
-            <groupId>org.freemarker</groupId>
-            <artifactId>freemarker</artifactId>
-            <version>2.3.19</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-            <version>3.2.2.RELEASE</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-            <version>3.2.2.RELEASE</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context-support</artifactId>
-            <version>3.2.2.RELEASE</version>
-        </dependency>
+		<!--Servlet API -->
+		<!-- 使用 org.apache.geronimo.specs -->
+		<!--
+		 	<dependency>
+				<groupId>servletapi</groupId>
+				<artifactId>servletapi</artifactId>
+				<version>2.4</version>
+				<scope>provided</scope>
+			</dependency>
+		-->
 
 
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-jdbc</artifactId>
-            <version>3.2.2.RELEASE</version>
-        </dependency>
+		<!--Freemarker-->
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>2.3.19</version>
+		</dependency>
 
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-aop</artifactId>
-            <version>3.2.2.RELEASE</version>
-        </dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>3.2.2.RELEASE</version>
+		</dependency>
 
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>3.2.2.RELEASE</version>
+		</dependency>
 
-        <!--内置的json-->
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-mapper-asl</artifactId>
-            <version>1.9.12</version>
-        </dependency>
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-core-asl</artifactId>
-            <version>1.9.12</version>
-        </dependency>
-
-
-        <!--习惯用的json-->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.1.27</version>
-        </dependency>
-
-        <!--Servlet-->
-        <!--<dependency>-->
-            <!--<groupId>org.apache.geronimo.specs</groupId>-->
-            <!--<artifactId>geronimo-servlet_2.5_spec</artifactId>-->
-            <!--<version>1.2</version>-->
-        <!--</dependency>-->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>3.2.2.RELEASE</version>
+		</dependency>
 
 
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>3.2.2.RELEASE</version>
+		</dependency>
 
-    </dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>3.2.2.RELEASE</version>
+		</dependency>
+
+
+		<!--内置的json-->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.12</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-core-asl</artifactId>
+			<version>1.9.12</version>
+		</dependency>
+
+
+		<!--习惯用的json-->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.1.27</version>
+		</dependency>
+
+		<!--dao-javaut-->
+		<dependency>
+			<groupId>commonDao</groupId>
+			<artifactId>commonDao</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+
+	
+		<!--Servlet-->
+		<dependency>
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-servlet_2.5_spec</artifactId>
+			<version>1.2</version>
+		</dependency>
+	
+
+
+	</dependencies>
 </project>
